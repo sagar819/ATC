@@ -1,0 +1,26 @@
+Start time of simulator : Fri Apr 6 00:37:06 2018
+
+----Grading for Trial 1---- 
+
+---Grading Criteria of AirCBXX---
+ Demerit Points/Credits Classification , 
+Acceptance Time : 1. 0-Threshold seconds(too early) : +2 points 
+Acceptance Time : 2. Threshold-Threshold+28 seconds(optimum time) : +0 points 
+Acceptance Time : 3. Threshold+28-Threshold+28+28 seconds(late) : +2 points 
+Acceptance Time : 4. Threshold+28+28-above seconds(too late) : +2 points 
+Acceptance Time : 5. never accepted : +4 points 
+
+
+Start Time of Simulator :Fri Apr 6 00:37:06 2018
+<AirCraftName = Accepted Timestamp > : {AirCB8=Fri Apr 06 00:37:13 EDT 2018, AirCB7=Fri Apr 06 00:52:42 EDT 2018, AirCB15=Fri Apr 06 00:44:44 EDT 2018, AirCB6=Fri Apr 06 00:45:24 EDT 2018, AirCB4=Fri Apr 06 00:52:33 EDT 2018, AirCB1=Fri Apr 06 00:37:42 EDT 2018}
+<AirCraftName = Time Taken to accept the aircraft in Seconds > : {AirCB8=7, AirCB7=936, AirCB15=458, AirCB6=498, AirCB4=927, AirCB1=36}
+Demerit Score of AirCB1: 0
+Demerit Score of AirCB8: 2
+Demerit Score of AirCB6: 2
+Demerit Score of AirCB15: 2
+Demerit Score of AirCB10: 4
+Demerit Score of AirCB9: 4
+Demerit Score of AirCB4: 2
+Demerit Score of AirCB7: 2
+Demerit Score of AirCB12: 4
+ Demerit Score of Trial 1 ( Accept time ): 22

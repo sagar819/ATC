@@ -1,0 +1,447 @@
+
+<atc:experiment xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:atc='http://www.humanfactors.uq.edu.au/atc/2006/atc-ns' xsi:schemaLocation='http://www.humanfactors.uq.edu.au/atc/2006/atc-ns atc_lab-2006-05.xsd' atc:idx='selina_001'>
+
+<!--
+      ****************************************
+      ****  Configuration                *****
+      ****************************************
+ -->
+  
+  <atc:config>
+  
+    <!--  Units  -->
+
+    <atc:units><atc:input>NM-FT</atc:input></atc:units>
+    
+    <!--  Aircraft Performance Data -->
+     
+     
+     <atc:aircraftParam atc:idx='B738'>
+      <atc:speed>390</atc:speed>
+      <atc:level>350</atc:level>
+      <atc:RoC atc:maxLevel='250'>2000</atc:RoC>
+      <atc:RoC atc:minLevel='250'>1000</atc:RoC>
+    </atc:aircraftParam>
+ 
+    <atc:aircraftParam atc:idx='DH8C' />
+    <atc:aircraftParam atc:idx='A320' />
+    <atc:aircraftParam atc:idx='B744' />
+    <atc:aircraftParam atc:idx='B772' />
+    <atc:aircraftParam atc:idx='A333' />
+    <atc:aircraftParam atc:idx='SF34' />
+    <atc:aircraftParam atc:idx='B763' />
+    <atc:aircraftParam atc:idx='B733' />
+    <atc:aircraftParam atc:idx='B734' />
+    <atc:aircraftParam atc:idx='C550' />
+    <atc:aircraftParam atc:idx='SW3' />
+     <atc:aircraftParam atc:idx='SW4' />
+    <atc:aircraftParam atc:idx='BE20' />
+  
+    <!--  Instructions -->
+
+ 
+
+  </atc:config>
+  
+<!--
+      ****************************************
+      ****  Map and Aircraft             *****
+      ****************************************
+ -->
+  
+ <atc:data>
+
+    <!--  Experimental Parameters  -->
+
+    <atc:param atc:idx='OverDefPar'>
+    <!--this indicates that every 1000ms's (1sec) on the screen the participant is looking at, he will see 50 seconds of aircraft activity-->
+        <atc:update_rate>1000</atc:update_rate>
+        <atc:scenario_tester>5</atc:scenario_tester>
+
+        <atc:cs_none_colour>black</atc:cs_none_colour>
+        <atc:cs_annonced_colour>blue</atc:cs_annonced_colour>
+        <atc:cs_accepted_colour>darkGreen</atc:cs_accepted_colour>
+        <atc:cs_handoff_colour>white</atc:cs_handoff_colour>
+        <atc:cs_nomore_colour>black</atc:cs_nomore_colour>
+        <atc:cs_overout_colour>#FF8000</atc:cs_overout_colour>
+        <atc:cs_proposed_colour atc:blink="yes">#FF8000</atc:cs_proposed_colour>
+
+    </atc:param>
+
+    <!-- Map Definitions -->
+
+    <atc:map atc:idx='practiceMap'>
+      <atc:region atc:y_dim='194.25' atc:y='-50' atc:x_dim='259' atc:x='-30' />
+
+      <!--map coords outline-->
+      <atc:location atc:y='0' atc:x='0' atc:visible='off' atc:idx='P1' />
+      <atc:location atc:y='0' atc:x='175' atc:visible='off' atc:idx='P2' />
+      <atc:location atc:y='96' atc:x='175' atc:visible='off' atc:idx='P3' />
+      <atc:location atc:y='96' atc:x='0' atc:visible='off' atc:idx='P4' />
+      <atc:location atc:y='96' atc:x='-30' atc:visible='off' atc:idx='P5' />
+      <atc:location atc:y='0' atc:x='228' atc:visible='off' atc:idx='P6' />
+
+      <atc:location atc:y='-50' atc:x='47.5' atc:visible='off' atc:idx='A' />
+      <atc:location atc:y='144' atc:x='47.5' atc:visible='off' atc:idx='B' />
+      <atc:location atc:y='30' atc:x='-30' atc:visible='off' atc:idx='C' />  
+      <atc:location atc:y='30' atc:x='228' atc:visible='off' atc:idx='D' />
+      <atc:location atc:y='70' atc:x='-30' atc:visible='off' atc:idx='E' />
+      <atc:location atc:y='70' atc:x='228' atc:visible='off' atc:idx='F' />
+      <atc:location atc:y='-50' atc:x='120.5' atc:visible='off' atc:idx='G' />
+      <atc:location atc:y='144' atc:x='120.5' atc:visible='off' atc:idx='H' />
+<!--These are the routes that are assigned an arbitrary name such as AAB-->
+      <atc:route atc:idx='AAA'>
+        <atc:pointref atc:location='A' />
+	      <atc:pointref atc:location='B' />
+      </atc:route>
+
+      <atc:route atc:idx='AAB'>
+        <atc:pointref atc:location='C' />
+	      <atc:pointref atc:location='D' />
+      </atc:route>
+
+      <atc:route atc:idx='AAC'>
+        <atc:pointref atc:location='E' />
+	      <atc:pointref atc:location='F' />
+      </atc:route>
+
+      <atc:route atc:idx='AAD'>
+        <atc:pointref atc:location='P5' />
+        <atc:pointref atc:location='P4' />
+	      <atc:pointref atc:location='P2' />
+        <atc:pointref atc:location='P6' />
+      </atc:route>
+
+     <atc:route atc:idx='AAE'>
+        <atc:pointref atc:location='G' />
+	      <atc:pointref atc:location='H' />
+      </atc:route>
+      
+      <!--The sector is the smaller white area within the greater grey area. The program understands this, given the provided points of reference-->
+      <atc:sector atc:status='active' atc:idx='practiceActive'>
+        <atc:vertex atc:y='0' atc:x='0' />
+        <atc:vertex atc:y='0' atc:x='175' />
+        <atc:vertex atc:y='96' atc:x='175' />
+        <atc:vertex atc:y='96' atc:x='0' />
+      </atc:sector>
+
+    
+
+    </atc:map>
+
+    <atc:map atc:idx='practiceMap2'>
+      <atc:region atc:y_dim='194.25' atc:y='-50' atc:x_dim='259' atc:x='-30' />
+<!--this section indicates the points of reference to make further routes available-->
+      <atc:location atc:y='0' atc:x='0' atc:visible='off' atc:idx='PB1' />
+      <atc:location atc:y='0' atc:x='175' atc:visible='off' atc:idx='PB2' />
+      <atc:location atc:y='96' atc:x='175' atc:visible='off' atc:idx='PB3' />
+      <atc:location atc:y='96' atc:x='0' atc:visible='off' atc:idx='PB4' />
+      <atc:location atc:y='96' atc:x='87.5' atc:visible='off' atc:idx='PB5' />
+      <atc:location atc:y='0' atc:x='87.5' atc:visible='off' atc:idx='PB6' />
+      <atc:location atc:y='48' atc:x='0' atc:visible='off' atc:idx='PB7' />
+      <atc:location atc:y='48' atc:x='175' atc:visible='off' atc:idx='PB8' />
+      <atc:location atc:y='48' atc:x='87.5' atc:visible='off' atc:idx='PB9' />
+      
+
+      <atc:route atc:idx='ABA'>
+        <atc:pointref atc:location='PB1' />
+	      <atc:pointref atc:location='PB2' />
+      </atc:route>
+
+      <atc:route atc:idx='ABB'>
+        <atc:pointref atc:location='PB3' />
+	      <atc:pointref atc:location='PB4' />
+      </atc:route>
+
+      <atc:route atc:idx='ABC'>
+        <atc:pointref atc:location='PB1' />
+	      <atc:pointref atc:location='PB4' />
+      </atc:route>
+
+      <atc:route atc:idx='ABD'>
+        <atc:pointref atc:location='PB2' />
+	      <atc:pointref atc:location='PB3' />
+      </atc:route>
+
+      <atc:route atc:idx='ABE'>
+        <atc:pointref atc:location='PB4' />
+	      <atc:pointref atc:location='PB9' />
+        <atc:pointref atc:location='PB2' />
+      </atc:route>
+
+      <atc:route atc:idx='ABF'>
+        <atc:pointref atc:location='PB1' />
+	      <atc:pointref atc:location='PB9' />
+        <atc:pointref atc:location='PB3' />
+      </atc:route>
+
+      <atc:route atc:idx='ABG'>
+        <atc:pointref atc:location='PB5' />
+	      <atc:pointref atc:location='PB9' />
+        <atc:pointref atc:location='PB6' />
+      </atc:route>
+
+      <atc:route atc:idx='ABH'>
+        <atc:pointref atc:location='PB7' />
+	      <atc:pointref atc:location='PB9' />
+        <atc:pointref atc:location='PB8' />
+      </atc:route>
+
+      <atc:sector atc:status='active' atc:idx='practiceActive2'>
+        <atc:vertex atc:y='0' atc:x='0' />
+        <atc:vertex atc:y='0' atc:x='175' />
+        <atc:vertex atc:y='96' atc:x='175' />
+        <atc:vertex atc:y='96' atc:x='0' />
+      </atc:sector>
+
+    </atc:map>
+    
+   
+   <atc:sky atc:idx='practicesky1'>
+<!--each one of these blocks represents what each individual aircraft is doing. Starting altitude, starting velocity, and vertex at which they'll achive the specified altitude-->
+
+     <atc:aircraft atc:type='B733' atc:idx='AirCB1'>
+      <atc:altitude>30000</atc:altitude>
+    	<atc:velocity>250</atc:velocity>
+      <atc:flightpath>
+        <atc:point atc:y='50' atc:x='-020'>
+          <atc:altitude>30000</atc:altitude>
+        </atc:point>
+        <atc:point atc:y='100' atc:x='270' />
+      </atc:flightpath>
+    </atc:aircraft>
+	
+	<atc:aircraft atc:type='B733' atc:idx='AirCB4'>
+      <atc:altitude>30000</atc:altitude>
+    	<atc:velocity>250</atc:velocity>
+      <atc:flightpath>
+        <atc:point atc:y='360' atc:x='190'>
+          <atc:altitude>30000</atc:altitude>
+        </atc:point>
+        <atc:point atc:y='-10' atc:x='-30' />
+      </atc:flightpath>
+    </atc:aircraft>
+	
+	<atc:aircraft atc:type='B733' atc:idx='AirCB5'>
+      <atc:altitude>30000</atc:altitude>
+    	<atc:velocity>250</atc:velocity>
+      <atc:flightpath>
+        <atc:point atc:y='50' atc:x='-500'>
+          <atc:altitude>30000</atc:altitude>
+        </atc:point>
+        <atc:point atc:y='30' atc:x='270' />
+      </atc:flightpath>
+    </atc:aircraft>
+
+    <atc:aircraft atc:type='B733' atc:idx='AirCB6'>
+      <atc:altitude>30000</atc:altitude>
+    	<atc:velocity>250</atc:velocity>
+      <atc:flightpath>
+        <atc:point atc:y='-90' atc:x='0'>
+          <atc:altitude>30000</atc:altitude>
+        </atc:point>
+        <atc:point atc:y='110' atc:x='215' />
+      </atc:flightpath>
+    </atc:aircraft>
+	
+	<atc:aircraft atc:type='B733' atc:idx='AirCB7'>
+      <atc:altitude>30000</atc:altitude>
+    	<atc:velocity>250</atc:velocity>
+      <atc:flightpath>
+        <atc:point atc:y='-370' atc:x='40.5'>
+          <atc:altitude>30000</atc:altitude>
+        </atc:point>
+        <atc:point atc:y='130' atc:x='87.5' />
+      </atc:flightpath>
+    </atc:aircraft>
+	
+	<atc:aircraft atc:type='B733' atc:idx='AirCB8'>
+      <atc:altitude>30000</atc:altitude>
+    	<atc:velocity>250</atc:velocity>
+      <atc:flightpath>
+        <atc:point atc:y='-15' atc:x='130'>
+          <atc:altitude>30000</atc:altitude>
+        </atc:point>
+        <atc:point atc:y='130' atc:x='40' />
+      </atc:flightpath>
+    </atc:aircraft>
+	
+	<atc:aircraft atc:type='B733' atc:idx='AirCB9'>
+      <atc:altitude>30000</atc:altitude>
+    	<atc:velocity>250</atc:velocity>
+      <atc:flightpath>
+        <atc:point atc:y='-20' atc:x='-300'>
+          <atc:altitude>30000</atc:altitude>
+        </atc:point>
+        <atc:point atc:y='50' atc:x='190' />
+      </atc:flightpath>
+    </atc:aircraft>
+
+    <atc:aircraft atc:type='B733' atc:idx='AirCB10'>
+      <atc:altitude>30000</atc:altitude>
+    	<atc:velocity>250</atc:velocity>
+      <atc:flightpath>
+        <atc:point atc:y='70' atc:x='400'>
+          <atc:altitude>30000</atc:altitude>
+        </atc:point>
+        <atc:point atc:y='20' atc:x='-40' />
+      </atc:flightpath>
+    </atc:aircraft>
+	
+	<atc:aircraft atc:type='B733' atc:idx='AirCB11'>
+      <atc:altitude>30000</atc:altitude>
+    	<atc:velocity>250</atc:velocity>
+      <atc:flightpath>
+        <atc:point atc:y='-500' atc:x='60.5'>
+          <atc:altitude>30000</atc:altitude>
+        </atc:point>
+        <atc:point atc:y='-20' atc:x='37.5' />
+      </atc:flightpath>
+    </atc:aircraft>
+	
+	<atc:aircraft atc:type='B733' atc:idx='AirCB13'>
+      <atc:altitude>30000</atc:altitude>
+    	<atc:velocity>250</atc:velocity>
+      <atc:flightpath>
+        <atc:point atc:y='480' atc:x='210'>
+          <atc:altitude>30000</atc:altitude>
+        </atc:point>
+        <atc:point atc:y='20' atc:x='-40' />
+      </atc:flightpath>
+    </atc:aircraft>
+	
+	<atc:aircraft atc:type='B733' atc:idx='AirCB14'>
+      <atc:altitude>30000</atc:altitude>
+    	<atc:velocity>250</atc:velocity>
+      <atc:flightpath>
+        <atc:point atc:y='-440' atc:x='100.5'>
+          <atc:altitude>30000</atc:altitude>
+        </atc:point>
+        <atc:point atc:y='-20' atc:x='10.5' />
+      </atc:flightpath>
+    </atc:aircraft>
+	
+	<atc:aircraft atc:type='B733' atc:idx='AirCB15'>
+      <atc:altitude>30000</atc:altitude>
+    	<atc:velocity>250</atc:velocity>
+      <atc:flightpath>
+        <atc:point atc:y='240' atc:x='200'>
+          <atc:altitude>30000</atc:altitude>
+        </atc:point>
+        <atc:point atc:y='-30' atc:x='-30' />
+      </atc:flightpath>
+    </atc:aircraft>
+
+   </atc:sky>
+
+   <atc:sky atc:idx='practicesky2'>
+
+    <atc:aircraft atc:type='DH8C' atc:idx='AirCB1'>
+      <atc:altitude>23000</atc:altitude>
+    	<atc:velocity>200</atc:velocity>
+      <atc:flightpath>
+        <atc:point atc:y='95' atc:x='-30'>
+          <atc:altitude>23000</atc:altitude>
+        </atc:point>
+        <atc:point atc:y='0' atc:x='195' />
+      </atc:flightpath>
+    </atc:aircraft>
+
+    <atc:aircraft atc:type='DH8C' atc:idx='AirCB2'>
+      <atc:altitude>23000</atc:altitude>
+    	<atc:velocity>200</atc:velocity>
+      <atc:flightpath>
+        <atc:point atc:y='48' atc:x='200'>
+          <atc:altitude>23000</atc:altitude>
+        </atc:point>
+        <atc:point atc:y='70' atc:x='-30' />
+      </atc:flightpath>
+    </atc:aircraft>
+
+    <atc:aircraft atc:type='DH8C' atc:idx='AirCB3'>
+      <atc:altitude>23000</atc:altitude>
+    	<atc:velocity>200</atc:velocity>
+      <atc:flightpath>
+        <atc:point atc:y='0' atc:x='-10'>
+          <atc:altitude>23000</atc:altitude>
+        </atc:point>
+        <atc:point atc:y='196' atc:x='195' />
+      </atc:flightpath>
+    </atc:aircraft>
+	
+	 <atc:aircraft atc:type='DH8C' atc:idx='AirCB4'>
+      <atc:altitude>23000</atc:altitude>
+    	<atc:velocity>200</atc:velocity>
+      <atc:flightpath>
+        <atc:point atc:y='170' atc:x='-30'>
+          <atc:altitude>23000</atc:altitude>
+        </atc:point>
+        <atc:point atc:y='0' atc:x='195' />
+      </atc:flightpath>
+    </atc:aircraft>
+	
+	 <atc:aircraft atc:type='DH8C' atc:idx='AirCB5'>
+      <atc:altitude>23000</atc:altitude>
+    	<atc:velocity>200</atc:velocity>
+      <atc:flightpath>
+        <atc:point atc:y='45' atc:x='380'>
+          <atc:altitude>23000</atc:altitude>
+        </atc:point>
+        <atc:point atc:y='65' atc:x='-30' />
+      </atc:flightpath>
+    </atc:aircraft>
+	
+	
+
+   <atc:area atc:type='weather' atc:idx='storm1'>
+      <atc:ellipse atc:h='25' atc:w='14' atc:y='44.63245' atc:a='45' atc:x='70' />
+    </atc:area>
+	
+	<atc:area atc:type='weather' atc:idx='storm2'>
+      <atc:ellipse atc:h='25' atc:w='14' atc:y='50.63245' atc:a='45' atc:x='110' />
+    </atc:area>
+
+   </atc:sky>
+   
+   <atc:sky atc:idx='practicesky3'>
+     
+
+   </atc:sky>
+
+  </atc:data>
+
+
+
+<!--
+      ****************************************
+      ****  Experiment Presentation      *****
+      ****************************************
+ -->
+  
+  <atc:presentation>
+
+    <atc:phase atc:idx="Practice-sets">
+      <atc:trial atc:idx="P000-T01" atc:param="OverDefPar" atc:map="practiceMap" atc:sky="practicesky1">
+        <atc:keyEvent>Crtl+Alt+N</atc:keyEvent>
+        <atc:timeEvent>1350</atc:timeEvent>
+      </atc:trial>
+	  
+      <atc:trial atc:idx="P000-T02" atc:param="OverDefPar" atc:map="practiceMap" atc:sky="practicesky1">
+        <atc:keyEvent>Crtl+Alt+N</atc:keyEvent>
+        <atc:timeEvent>1350</atc:timeEvent>
+      </atc:trial>
+	   
+	   <atc:trial atc:idx="P000-T03" atc:param="OverDefPar" atc:map="practiceMap" atc:sky="practicesky3">
+        <atc:keyEvent>Crtl+Alt+N</atc:keyEvent>
+        <atc:timeEvent>450</atc:timeEvent>
+
+	</atc:trial>   
+	
+    </atc:phase> 
+
+   
+  </atc:presentation>
+
+</atc:experiment>
+
+
